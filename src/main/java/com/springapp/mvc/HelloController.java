@@ -14,8 +14,8 @@ public class HelloController {
 		return "hello";
 	}
 
-	@RequestMapping(value="/page2.html",method = RequestMethod.GET)
+	@RequestMapping(value="/result.html",method = RequestMethod.GET)
 	public String a(ModelMap model) {
-		return "page2";
+		return "result";
 	}
 }

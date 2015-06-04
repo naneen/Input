@@ -20,8 +20,13 @@
 
     <style>
         body{
-            color: cornflowerblue;
+            color: white;
             text-align: center;
+            background: #8CBEB2;
+            padding: 40px;
+        }
+        h1{
+            color: #dc6344;
         }
         div{
             margin-left: auto;
@@ -36,7 +41,7 @@
 </head>
 <body>
 <h1>${message}</h1>
-<form action ="page2.html" method="get" align="center">
+<form action ="result.html" method="get" align="center">
     <div>
         <label for="name" class="required">Name:</label>
         <input type="text" class="form-control" id="name" name="name" required>
@@ -48,7 +53,6 @@
     </div>
     <br>
     <br>
-    <%--<input type="submit" onclick="return checkValid()">--%>
     <input type="submit" value="Submit" onclick="return checkValid()">
     <br>
     <br>
@@ -76,11 +80,17 @@
     function checkValid() {
         var varName = $("#name").val();
         var varAge = $("#age").val();
-        if( varName.valid() ){
-            document.getElementById("printName").innerHTML = "Hello " + varName;
-            document.getElementById("printAge").innerHTML = "Age " + varAge;
+        if( varName == '' && varAge == '' ) {
+            alert("Enter Some Text In Input Field");
+            return false;
         }
-        return true;
+        else if( !(varAge < 100 && varAge >= 0) ){
+            alert("Age : 0-99");
+            return false;
+        }
+        else{
+            return true;
+        }
     };
 </script>
 
