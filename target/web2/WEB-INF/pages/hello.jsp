@@ -18,30 +18,12 @@
 
     <title>Index</title>
 
-    <style>
-        body{
-            color: white;
-            text-align: center;
-            background: #8CBEB2;
-            padding: 40px;
-        }
-        h1{
-            color: #dc6344;
-        }
-        div{
-            margin-left: auto;
-            margin-right: auto;
-            width: 60%;
-        }
-        button{
-            width: 40%;
-            background-color: orange;
-        }
-    </style>
+    <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
+
 </head>
 <body>
 <h1>${message}</h1>
-<form action ="result.html" method="post">
+<form id="myForm" name="myForm" action ="result.html" method="post">
     <div>
         <label for="name" class="required">Name:</label>
         <input type="text" class="form-control" id="name" name="name" required>
@@ -53,7 +35,8 @@
     </div>
     <br>
     <br>
-    <input type="submit" value="Submit" onclick="return checkValid()">
+    <%--<input type="submit" value="Submit" id="submitB" name="submitB">--%>
+    <button type="submit"  class="btn btn-default">Submit</button>
     <br>
     <br>
     <p id="printName"></p>
@@ -67,7 +50,7 @@
         debug: true,
         success: "valid"
     });
-    var form = $( "#myform" );
+    var form = $( "#myForm" );
     form.validate({
         rules: {
             age: {
@@ -77,21 +60,27 @@
         }
     });
 
-    function checkValid() {
-        var varName = $("#name").val();
-        var varAge = $("#age").val();
-        if( varName == '' && varAge == '' ) {
-            alert("Enter Some Text In Input Field");
-            return false;
+    $( "button" ).click(function() {
+        if( form.valid() ){
+            document.getElementById('myForm').submit();
         }
-        else if( !(varAge < 100 && varAge >= 0) ){
-            alert("Age : 0-99");
-            return false;
-        }
-        else{
-            return true;
-        }
-    };
+    });
+
+//    function checkValid() {
+//        var varName = $("#name").val();
+//        var varAge = $("#age").val();
+//        if( varName == '' && varAge == '' ) {
+//            alert("Enter Some Text In Input Field");
+//            return false;
+//        }
+//        else if( !(varAge < 100 && varAge >= 0) ){
+//            alert("Age : 0-99");
+//            return false;
+//        }
+//        else{
+//            return true;
+//        }
+//    };
 </script>
 
 </body>
