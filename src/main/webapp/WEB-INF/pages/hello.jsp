@@ -18,26 +18,8 @@
 
     <title>Index</title>
 
-    <style>
-        body{
-            color: white;
-            text-align: center;
-            background: #8CBEB2;
-            padding: 40px;
-        }
-        h1{
-            color: #dc6344;
-        }
-        div{
-            margin-left: auto;
-            margin-right: auto;
-            width: 60%;
-        }
-        button{
-            width: 40%;
-            background-color: orange;
-        }
-    </style>
+    <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
+
 </head>
 <body>
 <h1>${message}</h1>
