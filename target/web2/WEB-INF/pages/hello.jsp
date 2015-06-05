@@ -20,8 +20,13 @@
 
     <style>
         body{
-            color: cornflowerblue;
+            color: white;
             text-align: center;
+            background: #8CBEB2;
+            padding: 40px;
+        }
+        h1{
+            color: #dc6344;
         }
         div{
             margin-left: auto;
@@ -36,7 +41,7 @@
 </head>
 <body>
 <h1>${message}</h1>
-<form action ="result.html" method="get" align="center">
+<form action ="result.html" method="post">
     <div>
         <label for="name" class="required">Name:</label>
         <input type="text" class="form-control" id="name" name="name" required>
@@ -48,7 +53,6 @@
     </div>
     <br>
     <br>
-    <%--<input type="submit" onclick="return checkValid()">--%>
     <input type="submit" value="Submit" onclick="return checkValid()">
     <br>
     <br>

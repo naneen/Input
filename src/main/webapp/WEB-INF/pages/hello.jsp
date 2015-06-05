@@ -41,7 +41,7 @@
 </head>
 <body>
 <h1>${message}</h1>
-<form action ="result.html" method="get" align="center">
+<form action ="result.html" method="post">
     <div>
         <label for="name" class="required">Name:</label>
         <input type="text" class="form-control" id="name" name="name" required>
